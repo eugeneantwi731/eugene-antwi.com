@@ -1,0 +1,146 @@
+/* =====================================================
+   SCROLL-TO-TOP FEATURE - PORTFOLIO STYLES (FIXED)
+===================================================== */
+
+.scroll-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+}
+
+.scroll-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Progress Circle */
+.progress-circle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.progress-circle-bg,
+.progress-circle-fill {
+  fill: none;
+  stroke-width: 4;
+  cx: 50%;
+  cy: 50%;
+  r: 20; /* default radius */
+}
+
+.progress-circle-bg {
+  stroke: rgba(255, 255, 255, 0.2);
+}
+
+.progress-circle-fill {
+  stroke: #6e45e2;
+  stroke-linecap: round;
+  stroke-dasharray: 125.66;  /* 2πr (r=20) */
+  stroke-dashoffset: 125.66;
+  transition: stroke-dashoffset 0.15s ease;
+}
+
+/* Inner Button */
+.scroll-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 38px;
+  height: 38px;
+  background: #6e45e2;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.scroll-icon svg {
+  stroke: white;
+  width: 30px;   /* bigger arrow */
+  height: 30px;  /* bigger arrow */
+  transition: transform 0.3s ease;
+}
+
+/* Hover */
+.scroll-to-top:hover .progress-circle-fill {
+  stroke: #8b5cf6;
+}
+
+.scroll-to-top:hover .scroll-icon {
+  background: #8b5cf6;
+  transform: translate(-50%, -50%) scale(1.08);
+}
+
+/* Pulse when near bottom */
+.scroll-to-top.near-bottom .scroll-icon {
+  animation: pulse 2s infinite;
+  border-radius: 50%; /* ensures circular glow */
+}
+
+@keyframes pulse {
+  0%   { box-shadow: 0 0 0 0 rgba(110, 69, 226, 0.8); }
+  70%  { box-shadow: 0 0 0 30px rgba(110, 69, 226, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(110, 69, 226, 0); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .scroll-to-top {
+    bottom: 20px;
+    right: 20px;
+    width: 45px;
+    height: 45px;
+  }
+  .progress-circle-bg,
+  .progress-circle-fill {
+    r: 18;
+    stroke-dasharray: 113.1; /* 2πr */
+    stroke-dashoffset: 113.1;
+  }
+  .scroll-icon {
+    width: 34px;
+    height: 34px;
+  }
+  .scroll-icon svg {
+    width: 22px;
+    height: 22px;
+  }
+}
+
+@media (max-width: 480px) {
+  .scroll-to-top {
+    bottom: 15px;
+    right: 15px;
+    width: 40px;
+    height: 40px;
+  }
+  .progress-circle-bg,
+  .progress-circle-fill {
+    r: 16;
+    stroke-dasharray: 100.5; /* 2πr */
+    stroke-dashoffset: 100.5;
+  }
+  .scroll-icon {
+    width: 30px;
+    height: 30px;
+  }
+  .scroll-icon svg {
+    width: 20px;
+    height: 20px;
+  }
+}

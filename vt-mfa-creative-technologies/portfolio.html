@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Eugene Antwi - MFA Creative Technologies Portfolio for Virginia Tech. Technical artist specializing in compositing, look development, and cultural representation in digital media.">
+    <meta name="author" content="Eugene Antwi">
+    <title>Eugene Antwi | VT MFA Creative Technologies Portfolio</title>
+    <link rel="icon" href="../works/IMAGES/EUGENE-ANTWI-FAVICON .png" type="image/x-icon">
+    
+    <!-- External CSS -->
+    <link rel="stylesheet" href="./vt-mfa.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sugar+Snow&display=swap" rel="stylesheet">
+</head>
+
+<!--
+FILE STRUCTURE:
+vt-mfa-creative-technologies/
+├── portfolio.html (this file)
+├── vt-mfa.css (styles)
+├── vt-mfa.js (interactions)
+├── images/
+│   ├── eugene-portrait-vt.png (your intro portrait in kente/dashiki)
+│   ├── piece-01.jpg (single images)
+│   ├── piece-02-main.jpg, piece-02-detail-1.jpg, piece-02-detail-2.jpg (grid layout images)
+│   ├── piece-03.jpg, piece-03-before.jpg, piece-03-after.jpg (comparison images)
+│   └── ... (continue for all 12 projects)
+└── videos/ (optional, for self-hosted videos)
+
+LAYOUT TYPES - Use different structures to tell different stories:
+
+1. LAYOUT-SINGLE: Simple, focused presentation
+   - One main image + description
+   - Best for: Character work, environments, single compositions
+   - Used in: Projects 1, 5, 7, 11
+
+2. LAYOUT-GRID: Show process and details
+   - One hero image + description + two detail images below
+   - Best for: Projects with multiple angles, work-in-progress shots, breakdowns
+   - Used in: Projects 2, 6, 10
+
+3. LAYOUT-COMPARISON: Show transformation
+   - Main image + description + before/after comparison
+   - Best for: Compositing work, look dev, before/after scenarios
+   - Used in: Projects 3, 8, 12
+
+4. VIDEO LAYOUTS: Motion work
+   - Vimeo embed or self-hosted video + description
+   - Best for: Animation, motion graphics, interactive demos
+   - Used in: Projects 4, 9
+
+HOW TO CUSTOMIZE:
+- Replace placeholder images with your work
+- Update project titles, years, and tools
+- Write 100-150 word descriptions for each piece
+- Mix and match layouts based on what each project needs
+- For videos: Use Vimeo embeds (recommended) or self-hosted MP4s
+
+DESIGN FEATURES:
+- Dark mode throughout
+- Gradient animated titles
+- Card-based layout with shadows
+- Hover effects and transitions
+- Fully responsive
+- Only Sugar Snow (titles) + Roboto (body) fonts
+-->
+
+<body>
+    
+    <!-- INTRO SECTION -->
+    <section id="intro">
+        <div class="container">
+            <div class="intro-content">
+                <div class="intro-image">
+                    <img src="./images/eugene-portrait-vt.png" alt="Eugene Antwi in traditional kente attire" loading="eager">
+                </div>
+                
+                <div class="intro-text">
+                    <h1 class="intro-main-title">Building authentic digital worlds</h1>
+                    <p>I create photorealistic African characters and environments for animation, VFX, and interactive media.</p>
+                    <p>Technical artist specializing in compositing, look development, and cultural representation.</p>
+                    <p class="highlight">Applying to Virginia Tech's MFA in Creative Technologies.</p>
+                </div>
+            </div>
+            <!-- Scroll Down Indicator -->
+            <div class="scroll-indicator" id="scroll-down">
+                <div class="mouse"></div>
+                <div class="scroll-arrows">
+                    <div class="arrow"></div>
+                    <div class="arrow"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+<!-- Animated Gradient Line -->
+<div style="width: 100%; overflow: hidden;">
+    <div class="gradient-line"></div>
+</div>
+
+    <!-- PORTFOLIO SECTION -->
+    <section id="portfolio">
+        <div class="container">
+            
+            <!-- PROJECT 1 - Single Image + Description -->
+            <article class="project-card">
+                <div class="card-header">
+                    <h2 class="gradient-title">Project Title One</h2>
+                    <span class="project-number">1/12</span>
+                </div>
+                
+                <div class="card-content layout-single">
+                    <div class="media-container">
+                        <img src="./images/piece-01.jpg" alt="Project 1" loading="lazy">
+                    </div>
+                    
+                    <div class="project-details">
+                        <p class="project-meta">2024 | Maya, Nuke, Substance Painter</p>
+                        <p class="project-description">
+                            [Your description here. Explain what you hoped to accomplish with this work. What technical challenges did you solve? What was the conceptual intent? Keep it focused on process and thinking. 100-150 words.]
+                        </p>
+                    </div>
+                </div>
+            </article>
+            
+            <!-- PROJECT 2 - Large Image + Grid Below -->
+            <article class="project-card">
+                <div class="card-header">
+                    <h2 class="gradient-title">Project Title Two</h2>
+                    <span class="project-number">2/12</span>
+                </div>
+                
+                <div class="card-content layout-grid">
+                    <div class="media-hero">
+                        <img src="./images/piece-02-main.jpg" alt="Project 2 main" loading="lazy">
+                    </div>
+                    
+                    <div class="project-details">
+                        <p class="project-meta">2024 | Unreal Engine, Houdini, Python</p>
+                        <p class="project-description">
+                            [Your description here.]
+                        </p>
+                    </div>
+                    
+                    <div class="media-grid">
+                        <div class="grid-item">
+                            <img src="./images/piece-02-detail-1.jpg" alt="Detail 1" loading="lazy">
+                        </div>
+                        <div class="grid-item">
+                            <img src="./images/piece-02-detail-2.jpg" alt="Detail 2" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+            </article>
+            
+            <!-- PROJECT 3 - Before/After Comparison -->
+            <article class="project-card">
+                <div class="card-header">
+                    <h2 class="gradient-title">Project Title Three</h2>
+                    <span class="project-number">3/12</span>
+                </div>
+                
+                <div class="card-content layout-comparison">
+                    <div class="media-container">
+                        <img src="./images/piece-03.jpg" alt="Project 3" loading="lazy">
+                    </div>
+                    
+                    <div class="project-details">
+                        <p class="project-meta">2023 | ZBrush, Maya, Arnold, Mari</p>
+                        <p class="project-description">
+                            [Your description here.]
+                        </p>
+                    </div>
+                    
+                    <div class="comparison-container">
+                        <div class="comparison-item">
+                            <span class="comparison-label">Before</span>
+                            <img src="./images/piece-03-before.jpg" alt="Before" loading="lazy">
+                        </div>
+                        <div class="comparison-item">
+                            <span class="comparison-label">After</span>
+                            <img src="./images/piece-03-after.jpg" alt="After" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+            </article>
+            
+            <!-- PROJECT 4 - Video Feature -->
+            <article class="project-card">
+                <div class="card-header">
+                    <h2 class="gradient-title">Project Title Four</h2>
+                    <span class="project-number">4/12</span>
+                </div>
+                
+                <div class="card-content layout-single">
+                    <div class="media-container">
+                        <!-- For Vimeo embed -->
+                        <iframe src="https://player.vimeo.com/video/YOUR_VIDEO_ID?title=0&byline=0&portrait=0" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+                        
+                        <!-- OR for self-hosted video, replace iframe with this:
+                        <video controls preload="metadata" loading="lazy">
+                            <source src="./videos/piece-04.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        -->
+                    </div>
+                    
+                    <div class="project-details">
+                        <p class="project-meta">2024 | After Effects, Cinema 4D, Redshift</p>
+                        <p class="project-description">
+                            [Your description here.]
+                        </p>
+                    </div>
+                </div>
+            </article>
+            
+            <!-- PROJECT 5 - Single Image + Description -->
+            <article class="project-card">
+                <div class="card-header">
+                    <h2 class="gradient-title">Project Title Five</h2>
+                    <span class="project-number">5/12</span>
+                </div>
+                
+                <div class="card-content layout-single">
+                    <div class="media-container">
+                        <img src="./images/piece-05.jpg" alt="Project 5" loading="lazy">
+                    </div>
+                    
+                    <div class="project-details">
+                        <p class="project-meta">2023 | TouchDesigner, Max/MSP</p>
+                        <p class="project-description">
+                            [Your description here.]
+                        </p>
+                    </div>
+                </div>
+            </article>
+            
+            <!-- PROJECT 6 - Large Image + Grid Below -->
+            <article class="project-card">
+                <div class="card-header">
+                    <h2 class="gradient-title">Project Title Six</h2>
+                    <span class="project-number">6/12</span>
+                </div>
+                
+                <div class="card-content layout-grid">
+                    <div class="media-hero">
+                        <img src="./images/piece-06-main.jpg" alt="Project 6 main" loading="lazy">
+                    </div>
+                    
+                    <div class="project-details">
+                        <p class="project-meta">2024 | Unity, C#, Blender</p>
+                        <p class="project-description">
+                            [Your description here.]
+                        </p>
+                    </div>
+                    
+                    <div class="media-grid">
+                        <div class="grid-item">
+                            <img src="./images/piece-06-detail-1.jpg" alt="Detail 1" loading="lazy">
+                        </div>
+                        <div class="grid-item">
+                            <img src="./images/piece-06-detail-2.jpg" alt="Detail 2" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+            </article>
+            
+            <!-- PROJECT 7 - Single Image + Description -->
+            <article class="project-card">
+                <div class="card-header">
+                    <h2 class="gradient-title">Project Title Seven</h2>
+                    <span class="project-number">7/12</span>
+                </div>
+                
+                <div class="card-content layout-single">
+                    <div class="media-container">
+                        <img src="./images/piece-07.jpg" alt="Project 7" loading="lazy">
+                    </div>
+                    
+                    <div class="project-details">
+                        <p class="project-meta">2023 | Nuke, Maya, Mari</p>
+                        <p class="project-description">
+                            [Your description here.]
+                        </p>
+                    </div>
+                </div>
+            </article>
+            
+            <!-- PROJECT 8 - Before/After Comparison -->
+            <article class="project-card">
+                <div class="card-header">
+                    <h2 class="gradient-title">Project Title Eight</h2>
+                    <span class="project-number">8/12</span>
+                </div>
+                
+                <div class="card-content layout-comparison">
+                    <div class="media-container">
+                        <img src="./images/piece-08.jpg" alt="Project 8" loading="lazy">
+                    </div>
+                    
+                    <div class="project-details">
+                        <p class="project-meta">2024 | Houdini, Redshift, Nuke</p>
+                        <p class="project-description">
+                            [Your description here.]
+                        </p>
+                    </div>
+                    
+                    <div class="comparison-container">
+                        <div class="comparison-item">
+                            <span class="comparison-label">Before</span>
+                            <img src="./images/piece-08-before.jpg" alt="Before" loading="lazy">
+                        </div>
+                        <div class="comparison-item">
+                            <span class="comparison-label">After</span>
+                            <img src="./images/piece-08-after.jpg" alt="After" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+            </article>
+            
+            <!-- PROJECT 9 - Video Feature -->
+            <article class="project-card">
+                <div class="card-header">
+                    <h2 class="gradient-title">Project Title Nine</h2>
+                    <span class="project-number">9/12</span>
+                </div>
+                
+                <div class="card-content layout-single">
+                    <div class="media-container">
+                        <iframe src="https://player.vimeo.com/video/YOUR_VIDEO_ID?title=0&byline=0&portrait=0" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+                    </div>
+                    
+                    <div class="project-details">
+                        <p class="project-meta">2023 | Unreal Engine, MetaHuman</p>
+                        <p class="project-description">
+                            [Your description here.]
+                        </p>
+                    </div>
+                </div>
+            </article>
+            
+            <!-- PROJECT 10 - Large Image + Grid Below -->
+            <article class="project-card">
+                <div class="card-header">
+                    <h2 class="gradient-title">Project Title Ten</h2>
+                    <span class="project-number">10/12</span>
+                </div>
+                
+                <div class="card-content layout-grid">
+                    <div class="media-hero">
+                        <img src="./images/piece-10-main.jpg" alt="Project 10 main" loading="lazy">
+                    </div>
+                    
+                    <div class="project-details">
+                        <p class="project-meta">2024 | Substance Designer, Marmoset</p>
+                        <p class="project-description">
+                            [Your description here.]
+                        </p>
+                    </div>
+                    
+                    <div class="media-grid">
+                        <div class="grid-item">
+                            <img src="./images/piece-10-detail-1.jpg" alt="Detail 1" loading="lazy">
+                        </div>
+                        <div class="grid-item">
+                            <img src="./images/piece-10-detail-2.jpg" alt="Detail 2" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+            </article>
+            
+            <!-- PROJECT 11 - Single Image + Description -->
+            <article class="project-card">
+                <div class="card-header">
+                    <h2 class="gradient-title">Project Title Eleven</h2>
+                    <span class="project-number">11/12</span>
+                </div>
+                
+                <div class="card-content layout-single">
+                    <div class="media-container">
+                        <img src="./images/piece-11.jpg" alt="Project 11" loading="lazy">
+                    </div>
+                    
+                    <div class="project-details">
+                        <p class="project-meta">2023 | Blender, Cycles, Photoshop</p>
+                        <p class="project-description">
+                            [Your description here.]
+                        </p>
+                    </div>
+                </div>
+            </article>
+            
+            <!-- PROJECT 12 - Before/After Comparison -->
+            <article class="project-card">
+                <div class="card-header">
+                    <h2 class="gradient-title">Project Title Twelve</h2>
+                    <span class="project-number">12/12</span>
+                </div>
+                
+                <div class="card-content layout-comparison">
+                    <div class="media-container">
+                        <img src="./images/piece-12.jpg" alt="Project 12" loading="lazy">
+                    </div>
+                    
+                    <div class="project-details">
+                        <p class="project-meta">2024 | Maya, Arnold, Nuke</p>
+                        <p class="project-description">
+                            [Your description here.]
+                        </p>
+                    </div>
+                    
+                    <div class="comparison-container">
+                        <div class="comparison-item">
+                            <span class="comparison-label">Before</span>
+                            <img src="./images/piece-12-before.jpg" alt="Before" loading="lazy">
+                        </div>
+                        <div class="comparison-item">
+                            <span class="comparison-label">After</span>
+                            <img src="./images/piece-12-after.jpg" alt="After" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+            </article>
+            
+        </div>
+    </section>
+    
+    <!-- BACK TO TOP BUTTON -->
+<button id="back-to-top" aria-label="Back to top">
+    <svg class="progress-ring" width="64" height="64">
+        <circle class="progress-ring__circle" stroke-dasharray="188.5 188.5" stroke-dashoffset="188.5" cx="32" cy="32" r="30"></circle>
+    </svg>
+    ↑
+</button>
+    
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Eugene Antwi. Created for Virginia Tech MFA Creative Technologies Application.</p>
+        </div>
+    </footer>
+    
+    <!-- External JavaScript -->
+    <script src="./vt-mfa.js"></script>
+    
+</body>
+</html>

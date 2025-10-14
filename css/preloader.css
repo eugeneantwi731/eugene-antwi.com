@@ -1,0 +1,171 @@
+/* ====================================================
+   Prevent Flash & Smooth Fade
+   ==================================================== */
+
+/* Hide all page children (except preloader) on first paint */
+body > *:not(#preloader) {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.6s ease;
+}
+
+/* When content is ready, reveal everything */
+body.content-loaded > *:not(#preloader) {
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+}
+
+/* Prevent scrolling while preloader is active */
+body.loading {
+  overflow: hidden !important;
+}
+
+/* Preloader */
+#preloader {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999;
+  opacity: 1;
+  transition: opacity 0.6s ease;
+}
+
+/* Smooth fade-out */
+.preloader-hidden {
+  opacity: 0 !important;
+  pointer-events: none;
+  transition: background 0.6s ease;
+}
+
+/* ====================================================
+   Preloader Themes
+   ==================================================== */
+.preloader-homepage {
+  background: #6e45e2;
+}
+.preloader-portfolio,
+.preloader-about {
+  background: #1a1a1a;
+}
+
+/* ====================================================
+   Morse Code Preloader Content
+   ==================================================== */
+.morse-display {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 0;
+  line-height: 1;
+}
+#morse-output {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.morse-dot {
+  width: 8px;
+  height: 8px;
+  background: #ffffff;
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0;
+  animation: morseAppear 0.1s ease forwards;
+}
+.morse-dash {
+  width: 20px;
+  height: 6px;
+  background: #ffffff;
+  border-radius: 3px;
+  display: inline-block;
+  opacity: 0;
+  animation: morseAppear 0.1s ease forwards;
+}
+.letter-space {
+  width: 10px;
+  height: 8px;
+  display: inline-block;
+}
+.word-space {
+  width: 24px;
+  height: 8px;
+  display: inline-block;
+}
+.morse-cursor {
+  width: 2px;
+  height: 12px;
+  background: #ffffff;
+  margin-left: 6px;
+  animation: blink 0.8s infinite;
+}
+@keyframes morseAppear {
+  from { opacity: 0; transform: scale(0.5); }
+  to   { opacity: 1; transform: scale(1); }
+}
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%,100% { opacity: 0; }
+}
+
+/* ====================================================
+   Sound Toggle Button
+   ==================================================== */
+#sound-toggle {
+  margin-top: 20px;
+  padding: 8px 14px;
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  font-size: 0.9rem;
+  border: 1px solid #fff;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+#sound-toggle:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+#sound-toggle.hidden {
+  display: none;
+}
+
+/* ====================================================
+   Responsive Design
+   ==================================================== */
+@media (max-width: 768px) {
+  .morse-dot { width: 5px; height: 5px; }
+  .morse-dash { width: 12px; height: 4px; }
+  .letter-space { width: 6px; height: 5px; }
+  .word-space { width: 16px; height: 5px; }
+  .morse-cursor { height: 10px; }
+  #sound-toggle { font-size: 0.8rem; padding: 6px 10px; }
+}
+
+
+/* FIX: Force portfolio navbar to stay dark during all transition phases */
+body.portfolio-page #navbar,
+body.loading.portfolio-page #navbar,
+body.content-loaded.portfolio-page #navbar {
+    background: rgba(15, 15, 15, 0.95) !important;
+}
+
+/* Override any conflicting scrolled states during portfolio page load */
+body.portfolio-page #navbar.scrolled {
+    background: rgba(15, 15, 15, 0.95) !important;
+}
+
+/* Ensure portfolio page body and html have black background immediately */
+body.portfolio-page,
+html:has(body.portfolio-page) {
+    background-color: #000000 !important;
+}
+
+
+

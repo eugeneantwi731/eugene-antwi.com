@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Eugene Antwi | Technical Artist & Cultural Innovator</title>
+    <link href="works/IMAGES/EUGENE-ANTWI-FAVICON .png" rel="icon" type="image/x-icon" />
+    <!-- Main CSS files first -->
+    <link rel="stylesheet" href="css/preloader.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/portfolio_styles.css">
+    <link rel="stylesheet" href="css/scroll-to-top.css">
+    <link rel="stylesheet" href="css/quick-navigation.css">
+    <!-- Portfolio override CSS LAST to ensure highest priority -->
+    <style>
+        /* PORTFOLIO COMPLETE OVERRIDE - PLACE THIS INLINE TO ENSURE HIGHEST PRIORITY */
+        body.portfolio-page #navbar .logo,
+        body.portfolio-page #navbar.scrolled .logo {
+            font-family: 'Sugar Snow', cursive !important;
+            color: white !important;
+            font-size: 1.8em !important;
+        }
+        
+        body.portfolio-page #navbar nav ul li a,
+        body.portfolio-page #navbar.scrolled nav ul li a {
+            color: white !important;
+        }
+        
+        body.portfolio-page #navbar .hamburger .line,
+        body.portfolio-page #navbar.scrolled .hamburger .line {
+            background: white !important;
+        }
+        
+        body.portfolio-page #navbar {
+            background: rgba(15, 15, 15, 0.95) !important;
+            backdrop-filter: blur(10px) !important;
+        }
+        
+        body.portfolio-page #navbar.scrolled {
+            background: rgba(0, 0, 0, 0.98) !important;
+        }
+        
+        body.portfolio-page .hero-title {
+            font-size: 7rem !important;
+            font-family: 'Sugar Snow', cursive !important;
+            color: white !important;
+        }
+        
+        body.portfolio-page .hero-description {
+            font-size: 2rem !important;
+            font-family: 'Roboto', sans-serif !important;
+            font-weight: 700 !important;
+            color: white !important;
+        }
+        
+        /* Mobile Navigation Fix */
+        @media (max-width: 768px) {
+            body.portfolio-page #navbar nav ul {
+                background: #000 !important;
+                position: fixed !important;
+                top: 80px !important;
+                left: 0 !important;
+                width: 100% !important;
+                height: auto !important;
+                flex-direction: column !important;
+                padding-top: 20px !important;
+                z-index: 10000 !important;
+                display: none !important;
+            }
+            
+            body.portfolio-page #navbar nav ul.open {
+                display: flex !important;
+            }
+            
+            body.portfolio-page #navbar nav ul li a {
+                color: white !important;
+                display: block !important;
+                padding: 15px !important;
+            }
+            
+            /* Responsive Typography */
+            body.portfolio-page .hero-title {
+                font-size: 3.5rem !important;
+            }
+            
+            body.portfolio-page .hero-description {
+                font-size: 1.4rem !important;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            body.portfolio-page .hero-title {
+                font-size: 2.5rem !important;
+            }
+            
+            body.portfolio-page .hero-description {
+                font-size: 1rem !important;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Sugar+Snow&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+</head>
+
+<body class="portfolio-page loading" class="portfolio-page">
+
+    <!-- Morse Code Preloader -->
+    <div id="preloader" class="preloader-portfolio">
+        <div class="morse-display">
+            <span id="morse-output"></span>
+            <span class="morse-cursor"></span>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <header id="navbar">
+        <div class="logo-container">
+            <img src="works/IMAGES/EUGENE ANTWI LOGO .png" alt="Logo" class="logo-icon logo-icon-white">
+            <img src="works/IMAGES/EUGENE ANTWI LOGO BLACK.png" alt="Logo" class="logo-icon logo-icon-black">
+            <div class="logo">EUGENE ANTWI</div>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="portfolio.html" class="active">Portfolio</a></li>
+                <li><a href="about.html">About | Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Portfolio Hero Section -->
+    <section id="portfolio-hero" class="portfolio-hero-section" data-nav-title="Portfolio">
+        <!-- Hero Media Container -->
+        <div class="hero-media-container">
+            <!-- Video Element (Primary) -->
+            <video 
+                id="hero-video" 
+                class="hero-video" 
+                autoplay 
+                muted 
+                loop 
+                playsinline
+                preload="metadata"
+                controlslist="nodownload"
+                disablePictureInPicture
+                poster="works/IMAGES/avt Final.png">
+                <source src="works/VIDEOS/EUGENE ANTWI 1D ANIMATION REEL.mp4" type="video/mp4">
+                <source src="works/VIDEOS/portfolio-reel.webm" type="video/webm">
+                <!-- Fallback for browsers that don't support video -->
+            </video>
+            
+            <!-- Fallback Image (Secondary) -->
+            <img 
+                id="hero-fallback" 
+                class="hero-image-fallback" 
+                src="works/IMAGES/portfolio-hero-fallback.jpg" 
+                alt="Eugene Antwi Portfolio Hero">
+        </div>
+
+        <!-- Hero Content Overlay -->
+        <div class="hero-content-overlay">
+            <div class="hero-content">
+                <h1 class="hero-title">MY PORTFOLIO</h1>
+                <p class="hero-description">Showcasing Technical Artistry, Design and Storytelling</p>
+            </div>
+        </div>
+
+        <!-- Mouse Scroll Down Indicator -->
+        <a class="scroll-indicator-link" href="#featured-projects">
+            <div class="scroll-indicator">
+                <div class="mouse">
+                    <div class="wheel"></div>
+                </div>
+                <div class="arrows">
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </a>
+    </section>
+
+    <!-- FEATURED PROJECTS SECTION -->
+    <section id="featured-projects" class="featured-projects-section" data-nav-title="Featured Projects">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Featured Projects</h2>
+                <p class="section-subtitle">Technical mastery with detailed documentation, process insights, and behind-the-scenes content</p>
+            </div>
+
+            <!-- Project Filters -->
+            <nav class="project-filters">
+                <ul class="filter-list">
+                    <li class="filter-item active" data-filter="all">All Works</li>
+                    <li class="filter-item" data-filter="look-development">Look Development</li>
+                    <li class="filter-item" data-filter="compositing">Compositing</li>
+                    <li class="filter-item" data-filter="3d-animation">3D Animation</li>
+                    <li class="filter-item" data-filter="digital-human">Digital Human</li>
+                    <li class="filter-item" data-filter="ui-ux">UI/UX Design</li>
+                    <li class="filter-item" data-filter="creative-frontend">Creative Frontend</li>
+                    <li class="filter-item" data-filter="technical-artistry">Technical Artistry</li>
+                </ul>
+            </nav>
+
+            <!-- Projects Grid -->
+            <div class="projects-grid">
+                
+                <!-- Project 1: Ghana Digital Assets Platform -->
+                <article class="project-card" data-category="creative-frontend ui-ux technical-artistry" data-project="ghana-platform">
+                    <div class="project-media">
+                        <img src="works/images/ghana-platform-preview.jpg" alt="Ghana Digital Assets Platform">
+                        <div class="project-overlay">
+                            <div class="overlay-content">
+                                <span class="project-type">Platform Development</span>
+                                <h3>Ghana Digital Assets Platform</h3>
+                                <p>Building Africa's first comprehensive digital asset marketplace</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-meta">
+                            <span class="status in-development">In Development</span>
+                            <span class="duration">6 months</span>
+                        </div>
+                        <h3>Ghana Digital Assets Platform</h3>
+                        <p>Market-creating technical solution addressing the lack of authentic African digital content in global marketplaces.</p>
+                        <div class="project-tags">
+                            <span class="tag">Platform Architecture</span>
+                            <span class="tag">Database Design</span>
+                            <span class="tag">Cultural Assets</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 2: Akwaaba Girl Digital Human -->
+                <article class="project-card" data-category="look-development digital-human 3d-animation" data-project="akwaaba-girl">
+                    <div class="project-media">
+                        <img src="works/images/akwaaba-girl-render.jpg" alt="Akwaaba Girl Digital Human">
+                        <div class="project-overlay">
+                            <div class="overlay-content">
+                                <span class="project-type">Digital Human Creation</span>
+                                <h3>Akwaaba Girl</h3>
+                                <p>Culturally authentic digital human with advanced PBR workflows</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-meta">
+                            <span class="status completed">Completed</span>
+                            <span class="duration">3 months</span>
+                        </div>
+                        <h3>Akwaaba Girl: Cultural Digital Human</h3>
+                        <p>Advanced subsurface scattering, skin shader networks, and cultural authenticity validation for Ghanaian digital representation.</p>
+                        <div class="project-tags">
+                            <span class="tag">PBR Materials</span>
+                            <span class="tag">Subsurface Scattering</span>
+                            <span class="tag">Cultural Accuracy</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 3: Portfolio Website -->
+                <article class="project-card" data-category="creative-frontend ui-ux" data-project="portfolio-website">
+                    <div class="project-media">
+                        <img src="works/images/portfolio-development.jpg" alt="Portfolio Website Development">
+                        <div class="project-overlay">
+                            <div class="overlay-content">
+                                <span class="project-type">Web Development</span>
+                                <h3>Portfolio Website</h3>
+                                <p>Full-stack development with vanilla JavaScript</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-meta">
+                            <span class="status live">Live</span>
+                            <span class="duration">2 months</span>
+                        </div>
+                        <h3>Full-Stack Portfolio Development</h3>
+                        <p>Custom-built showcase platform demonstrating technical versatility beyond 3D specialization.</p>
+                        <div class="project-tags">
+                            <span class="tag">Vanilla JavaScript</span>
+                            <span class="tag">Performance Optimization</span>
+                            <span class="tag">Responsive Design</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 4: Kente Fabric Simulation -->
+                <article class="project-card" data-category="look-development technical-artistry 3d-animation" data-project="kente-simulation">
+                    <div class="project-media">
+                        <img src="works/images/kente-simulation.jpg" alt="Kente Fabric Simulation">
+                        <div class="project-overlay">
+                            <div class="overlay-content">
+                                <span class="project-type">Fabric Simulation</span>
+                                <h3>Kente Fabric Study</h3>
+                                <p>Physics-accurate traditional textile simulation</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-meta">
+                            <span class="status completed">Completed</span>
+                            <span class="duration">2 months</span>
+                        </div>
+                        <h3>Kente Fabric Simulation Study</h3>
+                        <p>Physics-accurate traditional textile simulation for digital fashion with cultural pattern authenticity.</p>
+                        <div class="project-tags">
+                            <span class="tag">Cloth Simulation</span>
+                            <span class="tag">Cultural Patterns</span>
+                            <span class="tag">Blender Physics</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 5: Corporate Animation Series -->
+                <article class="project-card" data-category="3d-animation compositing" data-project="corporate-animation">
+                    <div class="project-media">
+                        <img src="works/images/corporate-animation.jpg" alt="Corporate Animation">
+                        <div class="project-overlay">
+                            <div class="overlay-content">
+                                <span class="project-type">Animation Series</span>
+                                <h3>Corporate Explainer Series</h3>
+                                <p>Professional animation for business communication</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-meta">
+                            <span class="status completed">Completed</span>
+                            <span class="duration">4 months</span>
+                        </div>
+                        <h3>Corporate Animation Series</h3>
+                        <p>Multi-part animated explainer series for corporate training and marketing materials.</p>
+                        <div class="project-tags">
+                            <span class="tag">Motion Graphics</span>
+                            <span class="tag">Corporate Branding</span>
+                            <span class="tag">After Effects</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 6: VR Environment Design -->
+                <article class="project-card" data-category="look-development technical-artistry" data-project="vr-environment">
+                    <div class="project-media">
+                        <img src="works/images/vr-environment.jpg" alt="VR Environment">
+                        <div class="project-overlay">
+                            <div class="overlay-content">
+                                <span class="project-type">VR Development</span>
+                                <h3>Immersive VR Environment</h3>
+                                <p>Cultural heritage virtual reality experience</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-meta">
+                            <span class="status in-development">In Development</span>
+                            <span class="duration">5 months</span>
+                        </div>
+                        <h3>VR Cultural Heritage Experience</h3>
+                        <p>Immersive virtual reality environment showcasing Ghanaian historical sites and cultural practices.</p>
+                        <div class="project-tags">
+                            <span class="tag">Unity VR</span>
+                            <span class="tag">Environment Art</span>
+                            <span class="tag">Cultural Heritage</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 7: UI Dashboard Design -->
+                <article class="project-card" data-category="ui-ux creative-frontend" data-project="dashboard-design">
+                    <div class="project-media">
+                        <img src="works/images/dashboard-design.jpg" alt="Dashboard Design">
+                        <div class="project-overlay">
+                            <div class="overlay-content">
+                                <span class="project-type">UI/UX Design</span>
+                                <h3>Analytics Dashboard</h3>
+                                <p>Modern data visualization interface</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-meta">
+                            <span class="status completed">Completed</span>
+                            <span class="duration">6 weeks</span>
+                        </div>
+                        <h3>Analytics Dashboard Design</h3>
+                        <p>Comprehensive data visualization dashboard with interactive charts and real-time updates.</p>
+                        <div class="project-tags">
+                            <span class="tag">Data Visualization</span>
+                            <span class="tag">React.js</span>
+                            <span class="tag">D3.js</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 8: Character Rigging System -->
+                <article class="project-card" data-category="3d-animation technical-artistry" data-project="character-rigging">
+                    <div class="project-media">
+                        <img src="works/images/character-rigging.jpg" alt="Character Rigging">
+                        <div class="project-overlay">
+                            <div class="overlay-content">
+                                <span class="project-type">Technical Animation</span>
+                                <h3>Advanced Character Rig</h3>
+                                <p>Professional animation control system</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-meta">
+                            <span class="status completed">Completed</span>
+                            <span class="duration">3 weeks</span>
+                        </div>
+                        <h3>Advanced Character Rigging System</h3>
+                        <p>Professional-grade character rig with advanced facial controls and custom Python tools.</p>
+                        <div class="project-tags">
+                            <span class="tag">Maya Rigging</span>
+                            <span class="tag">Python Scripting</span>
+                            <span class="tag">Animation Tools</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 9: Compositing Breakdown -->
+                <article class="project-card" data-category="compositing look-development" data-project="compositing-breakdown">
+                    <div class="project-media">
+                        <img src="works/images/compositing-breakdown.jpg" alt="Compositing Breakdown">
+                        <div class="project-overlay">
+                            <div class="overlay-content">
+                                <span class="project-type">VFX Compositing</span>
+                                <h3>VFX Breakdown Reel</h3>
+                                <p>Professional compositing techniques showcase</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-meta">
+                            <span class="status completed">Completed</span>
+                            <span class="duration">8 weeks</span>
+                        </div>
+                        <h3>VFX Compositing Breakdown</h3>
+                        <p>Comprehensive breakdown reel demonstrating advanced compositing techniques and workflow optimization.</p>
+                        <div class="project-tags">
+                            <span class="tag">Nuke Compositing</span>
+                            <span class="tag">VFX Pipeline</span>
+                            <span class="tag">Color Grading</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 10: Mobile App Design -->
+                <article class="project-card" data-category="ui-ux creative-frontend" data-project="mobile-app">
+                    <div class="project-media">
+                        <img src="works/images/mobile-app-design.jpg" alt="Mobile App Design">
+                        <div class="project-overlay">
+                            <div class="overlay-content">
+                                <span class="project-type">Mobile Design</span>
+                                <h3>Cultural Learning App</h3>
+                                <p>Educational mobile application interface</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-meta">
+                            <span class="status in-development">In Development</span>
+                            <span class="duration">3 months</span>
+                        </div>
+                        <h3>Cultural Learning Mobile App</h3>
+                        <p>Educational mobile application for learning African languages and cultural practices through interactive design.</p>
+                        <div class="project-tags">
+                            <span class="tag">Mobile UI</span>
+                            <span class="tag">User Experience</span>
+                            <span class="tag">Flutter</span>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- VISUAL GALLERY SECTION - MICROSOFT COPILOT STYLE -->
+    <section id="visual-gallery" class="visual-gallery-section" data-nav-title="Visual Gallery">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Visual Gallery</h2>
+                <p class="section-subtitle">Creative showcase - artworks, illustrations, and experimental visual pieces</p>
+            </div>
+
+            <!-- Visual Gallery Grid - Microsoft Copilot Style -->
+            <div class="visual-gallery-grid">
+                
+                <!-- Row 1 -->
+                <div class="gallery-item" onclick="openGalleryLightboxWithNav('works/images/gallery/ABSTRACT ART 1.png', 'Abstract Digital Composition')">
+                    <img src="works/images/gallery/ABSTRACT ART 1.png" alt="Abstract Art 1" loading="lazy">
+                    <div class="gallery-card-content">
+                        <div class="gallery-card-title">Abstract Composition</div>
+                        <div class="gallery-card-category">Digital Art</div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" onclick="openGalleryLightboxWithNav('works/images/gallery/ME WHAT IF wallpaper.png', 'Character Design Study')">
+                    <img src="works/images/gallery/ME WHAT IF wallpaper.png" alt="Character Design" loading="lazy">
+                    <div class="gallery-card-content">
+                        <div class="gallery-card-title">Character Design</div>
+                        <div class="gallery-card-category">Concept Art</div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" onclick="openGalleryLightboxWithNav('works/images/gallery/RANDOM WARRIOR FINAL COMP_00000.png', 'Warrior Concept')">
+                    <img src="works/images/gallery/RANDOM WARRIOR FINAL COMP_00000.png" alt="Warrior Concept" loading="lazy">
+                    <div class="gallery-card-content">
+                        <div class="gallery-card-title">Warrior Concept</div>
+                        <div class="gallery-card-category">Character Art</div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" onclick="openGalleryLightboxWithNav('works/images/gallery/digital-painting-1.jpg', 'Digital Painting')">
+                    <img src="works/images/gallery/digital-painting-1.jpg" alt="Digital Painting" loading="lazy">
+                    <div class="gallery-card-content">
+                        <div class="gallery-card-title">Digital Painting</div>
+                        <div class="gallery-card-category">Illustration</div>
+                    </div>
+                </div>
+
+                <!-- Row 2 -->
+                <div class="gallery-item" onclick="openGalleryLightboxWithNav('works/images/gallery/environment-art-1.jpg', 'Environment Concept')">
+                    <img src="works/images/gallery/environment-art-1.jpg" alt="Environment Art" loading="lazy">
+                    <div class="gallery-card-content">
+                        <div class="gallery-card-title">Environment Concept</div>
+                        <div class="gallery-card-category">Concept Art</div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" onclick="openGalleryLightboxWithNav('works/images/gallery/typography-1.jpg', 'Typography Design')">
+                    <img src="works/images/gallery/typography-1.jpg" alt="Typography" loading="lazy">
+                    <div class="gallery-card-content">
+                        <div class="gallery-card-title">Typography Design</div>
+                        <div class="gallery-card-category">Graphic Design</div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" onclick="openGalleryLightboxWithNav('works/images/gallery/product-render-1.jpg', 'Product Visualization')">
+                    <img src="works/images/gallery/product-render-1.jpg" alt="Product Render" loading="lazy">
+                    <div class="gallery-card-content">
+                        <div class="gallery-card-title">Product Visualization</div>
+                        <div class="gallery-card-category">3D Render</div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" onclick="openGalleryLightboxWithNav('works/images/gallery/web-design-1.jpg', 'Web Interface')">
+                    <img src="works/images/gallery/web-design-1.jpg" alt="Web Design" loading="lazy">
+                    <div class="gallery-card-content">
+                        <div class="gallery-card-title">Web Interface</div>
+                        <div class="gallery-card-category">UI Design</div>
+                    </div>
+                </div>
+
+                <!-- Row 3 -->
+                <div class="gallery-item" onclick="openGalleryLightboxWithNav('works/images/gallery/concept-art-1.jpg', 'Vehicle Concept')">
+                    <img src="works/images/gallery/concept-art-1.jpg" alt="Concept Art" loading="lazy">
+                    <div class="gallery-card-content">
+                        <div class="gallery-card-title">Vehicle Concept</div>
+                        <div class="gallery-card-category">Concept Art</div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" onclick="openGalleryLightboxWithNav('works/images/gallery/fashion-design-1.jpg', 'Fashion Design')">
+                    <img src="works/images/gallery/fashion-design-1.jpg" alt="Fashion Design" loading="lazy">
+                    <div class="gallery-card-content">
+                        <div class="gallery-card-title">Fashion Design</div>
+                        <div class="gallery-card-category">Fashion</div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" onclick="openGalleryLightboxWithNav('works/images/gallery/abstract-art-2.jpg', 'Abstract Study 2')">
+                    <img src="works/images/gallery/abstract-art-2.jpg" alt="Abstract Art 2" loading="lazy">
+                    <div class="gallery-card-content">
+                        <div class="gallery-card-title">Abstract Study 2</div>
+                        <div class="gallery-card-category">Digital Art</div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" onclick="openGalleryLightboxWithNav('works/images/gallery/logo-design-1.jpg', 'Brand Identity')">
+                    <img src="works/images/gallery/logo-design-1.jpg" alt="Logo Design" loading="lazy">
+                    <div class="gallery-card-content">
+                        <div class="gallery-card-title">Brand Identity</div>
+                        <div class="gallery-card-category">Branding</div>
+                    </div>
+                </div>
+
+                <!-- Row 4 -->
+                <div class="gallery-item" onclick="openGalleryLightboxWithNav('works/images/gallery/architectural-viz-1.jpg', 'Architectural Visualization')">
+                    <img src="works/images/gallery/architectural-viz-1.jpg" alt="Architecture" loading="lazy">
+                    <div class="gallery-card-content">
+                        <div class="gallery-card-title">Architectural Viz</div>
+                        <div class="gallery-card-category">3D Visualization</div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" onclick="openGalleryLightboxWithNav('works/images/gallery/motion-graphics-1.jpg', 'Motion Graphics')">
+                    <img src="works/images/gallery/motion-graphics-1.jpg" alt="Motion Graphics" loading="lazy">
+                    <div class="gallery-card-content">
+                        <div class="gallery-card-title">Motion Graphics</div>
+                        <div class="gallery-card-category">Animation</div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" onclick="openGalleryLightboxWithNav('works/images/gallery/game-asset-1.jpg', 'Game Assets')">
+                    <img src="works/images/gallery/game-asset-1.jpg" alt="Game Assets" loading="lazy">
+                    <div class="gallery-card-content">
+                        <div class="gallery-card-title">Game Assets</div>
+                        <div class="gallery-card-category">Game Art</div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" onclick="openGalleryLightboxWithNav('works/images/gallery/packaging-design-1.jpg', 'Packaging Design')">
+                    <img src="works/images/gallery/packaging-design-1.jpg" alt="Packaging" loading="lazy">
+                    <div class="gallery-card-content">
+                        <div class="gallery-card-title">Packaging Design</div>
+                        <div class="gallery-card-category">Product Design</div>
+                    </div>
+                </div>
+
+                <!-- Row 5 -->
+                <div class="gallery-item" onclick="openGalleryLightboxWithNav('works/images/gallery/mobile-ui-1.jpg', 'Mobile Interface')">
+                    <img src="works/images/gallery/mobile-ui-1.jpg" alt="Mobile UI" loading="lazy">
+                    <div class="gallery-card-content">
+                        <div class="gallery-card-title">Mobile Interface</div>
+                        <div class="gallery-card-category">UI/UX</div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" onclick="openGalleryLightboxWithNav('works/images/gallery/poster-design-1.jpg', 'Poster Design')">
+                    <img src="works/images/gallery/poster-design-1.jpg" alt="Poster Design" loading="lazy">
+                    <div class="gallery-card-content">
+                        <div class="gallery-card-title">Poster Design</div>
+                        <div class="gallery-card-category">Print Design</div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" onclick="openGalleryLightboxWithNav('works/images/gallery/sculpture-3d-1.jpg', '3D Sculpture')">
+                    <img src="works/images/gallery/sculpture-3d-1.jpg" alt="3D Sculpture" loading="lazy">
+                    <div class="gallery-card-content">
+                        <div class="gallery-card-title">3D Sculpture</div>
+                        <div class="gallery-card-category">3D Art</div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" onclick="openGalleryLightboxWithNav('works/images/gallery/experimental-art-1.jpg', 'Experimental Art')">
+                    <img src="works/images/gallery/experimental-art-1.jpg" alt="Experimental" loading="lazy">
+                    <div class="gallery-card-content">
+                        <div class="gallery-card-title">Experimental Art</div>
+                        <div class="gallery-card-category">Mixed Media</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- VIDEO GALLERY SECTION - BIGGER THUMBNAILS -->
+    <section id="video-gallery" class="video-gallery-section" data-nav-title="Video Gallery">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Video Gallery</h2>
+                <p class="section-subtitle">Animation projects, process videos, and motion work - showcasing technical and creative skills</p>
+            </div>
+
+            <!-- Video Categories -->
+            <nav class="video-categories">
+                <ul class="category-list">
+                    <li class="category-item active" data-category="all">All Videos</li>
+                    <li class="category-item" data-category="animations">Animations</li>
+                    <li class="category-item" data-category="process">Process Videos</li>
+                    <li class="category-item" data-category="tutorials">Tutorials</li>
+                </ul>
+            </nav>
+
+            <!-- Videos Grid - Bigger Layout -->
+            <div class="videos-grid">
+                
+                <!-- Video Item 1 -->
+                <div class="video-item" data-category="animations" data-youtube-id="YOUR_YOUTUBE_ID_1">
+                    <div class="video-thumbnail">
+                        <img src="works/images/video-thumbnails/animation-reel.jpg" alt="Animation Reel">
+                        <div class="video-play-overlay">
+                            <div class="play-button">▶</div>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h3>The Comeback - PowerPoint Animation</h3>
+                        <p>Creative short film created entirely using PowerPoint animation techniques, demonstrating innovative approaches to accessible animation tools.</p>
+                        <div class="video-meta">
+                            <span class="duration">3:45</span>
+                            <span class="platform">YouTube</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video Item 2 -->
+                <div class="video-item" data-category="process" data-vimeo-id="YOUR_VIMEO_ID_1">
+                    <div class="video-thumbnail">
+                        <img src="works/images/video-thumbnails/character-process.jpg" alt="Character Creation Process">
+                        <div class="video-play-overlay">
+                            <div class="play-button">▶</div>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h3>Digital Human Creation Process</h3>
+                        <p>Behind-the-scenes look at creating the Akwaaba Girl character, showcasing photogrammetry to final render workflow.</p>
+                        <div class="video-meta">
+                            <span class="duration">8:20</span>
+                            <span class="platform">Vimeo</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video Item 3 -->
+                <div class="video-item" data-category="tutorials" data-local-video="works/videos/lighting-tutorial.mp4">
+                    <div class="video-thumbnail">
+                        <img src="works/images/video-thumbnails/lighting-tutorial.jpg" alt="Lighting Tutorial">
+                        <div class="video-play-overlay">
+                            <div class="play-button">▶</div>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h3>Pixar-Style Lighting Techniques</h3>
+                        <p>Comprehensive tutorial on achieving professional lighting using accessible tools and techniques for independent creators.</p>
+                        <div class="video-meta">
+                            <span class="duration">12:15</span>
+                            <span class="platform">Local</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video Item 4 -->
+                <div class="video-item" data-category="animations" data-youtube-id="YOUR_YOUTUBE_ID_2">
+                    <div class="video-thumbnail">
+                        <img src="works/images/video-thumbnails/motion-graphics.jpg" alt="Motion Graphics Reel">
+                        <div class="video-play-overlay">
+                            <div class="play-button">▶</div>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h3>Motion Graphics Showreel 2024</h3>
+                        <p>Compilation of motion graphics work including corporate animations, logo reveals, and explainer video excerpts.</p>
+                        <div class="video-meta">
+                            <span class="duration">2:30</span>
+                            <span class="platform">YouTube</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Modal for Detailed Documentation -->
+    <div id="project-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-body">
+                <!-- Dynamic project content will be loaded here -->
+                <div class="modal-loading">
+                    <div class="spinner"></div>
+                    <p>Loading project details...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Lightbox for Gallery Images -->
+    <div id="gallery-lightbox" class="lightbox">
+        <span class="lightbox-close">&times;</span>
+        <img class="lightbox-content" id="lightbox-image">
+        <div class="lightbox-caption"></div>
+    </div>
+
+
+    <!-- Footer Section -->
+    <footer id="footer" data-nav-title="Footer">
+        <div class="footer-container">
+            <div class="footer-left">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="about.html">About | Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-center">
+                <h4>Let's Connect</h4>
+                <div class="social-icons">
+                    <a class="icon-behance" data-tooltip="Behance" href="https://www.behance.net/eugeneantwi" rel="noopener noreferrer" target="_blank">
+                        <img alt="Behance" src="works/IMAGES/behance_footer_ico.svg"/>
+                    </a>
+                    <a class="icon-linkedin" data-tooltip="LinkedIn" href="https://www.linkedin.com/in/eugene-antwi-067a82197/" rel="noopener noreferrer" target="_blank">
+                        <img alt="LinkedIn" src="works/IMAGES/linkedin_footer_ico.svg"/>
+                    </a>
+                    <a class="icon-youtube" data-tooltip="YouTube" href="https://youtube.com/@eugeneantwi9132?si=P157f9TNwZFqPKQE" rel="noopener noreferrer" target="_blank">
+                        <img alt="YouTube" src="works/IMAGES/youtube_footer_ico.svg"/>
+                    </a>
+                    <a class="icon-instagram" data-tooltip="Instagram" href="https://www.instagram.com/pro.youjin/" rel="noopener noreferrer" target="_blank">
+                        <img alt="Instagram" src="works/IMAGES/instagram_footer_ico.svg"/>
+                    </a>
+                    <a class="icon-artstation" data-tooltip="ArtStation" href="https://eugeneantwi7.artstation.com/" rel="noopener noreferrer" target="_blank">
+                        <img alt="ArtStation" src="works/IMAGES/artstation_footer_ico.svg"/>
+                    </a>
+                    <a class="icon-fiverr" data-tooltip="Fiverr" href="https://www.fiverr.com/eugeneantwi731/" rel="noopener noreferrer" target="_blank">
+                        <img alt="Fiverr" src="works/IMAGES/fiverr_footer_ico.svg"/>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-right">
+                <div class="footer-logo">
+                    <img alt="EA" src="works/IMAGES/EugeneAntwi_Footer_Logo.svg"/>
+                    <div class="footer-logo-text">EUGENE ANTWI</div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Eugene Ampadu Antwi. All rights reserved.</p>
+            <p>Technical Artist</p>
+        </div>
+    </footer>
+
+    <!-- Quick Navigation System -->
+    
+    
+    <!-- Scroll-to-Top Button -->
+    <div id="scrollToTop" class="scroll-to-top">
+        <svg class="progress-circle" width="50" height="50">
+            <circle cx="25" cy="25" r="20" class="progress-circle-bg"></circle>
+            <circle cx="25" cy="25" r="20" class="progress-circle-fill"></circle>
+        </svg>
+        <div class="scroll-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="18,15 12,9 6,15"></polyline>
+            </svg>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/preloader.js"></script>
+    <script src="js/scripts.js"></script>
+    <script src="js/portfolio_scripts.js"></script>
+    <script src="js/scroll-to-top.js"></script>
+    <script src="js/quick-navigation.js"></script>
+
+</body>
+</html>
