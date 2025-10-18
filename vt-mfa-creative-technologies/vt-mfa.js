@@ -5,6 +5,25 @@
 document.addEventListener('DOMContentLoaded', () => {
     console.log('VT MFA Portfolio loaded successfully');
     
+    // ===== PORTRAIT HOVER ANIMATION =====
+    const portraitContainer = document.querySelector('.portrait-container');
+    const portraitGif = document.querySelector('.portrait-gif');
+
+    if (portraitContainer && portraitGif) {
+        // Preload the GIF
+        const preloadGif = new Image();
+        preloadGif.src = portraitGif.src;
+        
+        // Reset GIF on mouse leave to restart animation
+        portraitContainer.addEventListener('mouseleave', () => {
+            setTimeout(() => {
+                const currentSrc = portraitGif.src;
+                portraitGif.src = '';
+                portraitGif.src = currentSrc; // Forces GIF restart
+            }, 400); // After fade transition completes
+        });
+    }
+
     // ===== BACK TO TOP BUTTON =====
     const backToTopBtn = document.getElementById('back-to-top');
     const progressCircle = document.querySelector('.progress-ring__circle');
@@ -167,3 +186,4 @@ document.addEventListener('keydown', (e) => {
         window.scrollTo({top: 0, behavior: 'smooth'});
     }
 });
+

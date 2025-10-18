@@ -166,7 +166,7 @@ h1, h2, h3 {
 }
 
 .intro-image {
-    flex: 0 0 450px; /* keeps the layout space fixed */
+    flex: 0 0 450px; /*layout space fixed */
     position: relative;
     z-index: -1;
 }
@@ -179,8 +179,43 @@ h1, h2, h3 {
     transition: transform 0.4s ease;
 }
 
-.intro-image img:hover {
-    transform: translateY(-8px);
+
+.portrait-container {
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+.portrait-static,
+.portrait-gif {
+    width: 170%;
+    height: auto;
+    display: block;
+    max-width: none;
+    transition: opacity 0.4s ease-out;
+}
+
+.portrait-gif {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.portrait-container:hover .portrait-gif {
+    opacity: 1;
+}
+
+.portrait-container:hover .portrait-static {
+    opacity: 0;
+}
+
+/* Mobile - no hover state */
+@media (max-width: 768px) {
+    .portrait-gif {
+        display: none;
+    }
 }
 
 .intro-text {
